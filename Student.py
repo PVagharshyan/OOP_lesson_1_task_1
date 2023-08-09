@@ -1,9 +1,10 @@
 class Student:
-    student_id__ = 0
+    _counter = 0
     def __init__(self, name, age):
-        Student.student_id__ += 1
+        Student._counter += 1
         if not (self._cheack_age(age) and self._cheack_name(name)):
             raise ValueError()
+        self._student_id__ = self._counter
         self.m_name = name
         self.m_age = age
     def get_name(self):
@@ -11,7 +12,7 @@ class Student:
     def get_age(self):
         return self.m_age
     def get_id(self):
-        return self.student_id__
+        return self._student_id__
     def set_name(self, name):
         if not self._cheack_name(name):
             raise ValueError()
